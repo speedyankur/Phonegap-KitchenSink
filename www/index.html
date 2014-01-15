@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1">
+        <title>jQuery Mobile Demos</title>
+        <link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.4.0.min.css">
+        <link rel="stylesheet" href="others/css/jqm-demos.css">
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="others/js/index.js"></script>
+        <script src="js/jquery.mobile-1.4.0.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        <script type="text/javascript" src="js/accelerometer.js"></script>
+        <script type="text/javascript" src="js/camera.js"></script>
+        <script type="text/javascript" src="js/gallery.js"></script>
+        <script type="text/javascript" src="js/audio.js"></script>
+        <script type="text/javascript" src="js/video.js"></script>
+        <script type="text/javascript" src="js/compass.js"></script>
+        <script type="text/javascript" src="js/contact.js"></script>
+        <script type="text/javascript" src="js/geolocation.js"></script>
+        <script type="text/javascript" src="js/notification.js"></script>
+
+
+    </head>
+    <body>
+        <!-- home page starts-->
+        <div data-role="page" class="jqm-demos jqm-home" id="home">
+
+            <div data-role="header" class="jqm-header">
+                <h2><img src="others/img/logo.png" alt="Trantor Inc."></h2>
+                <p>Version <span class="jqm-version"></span></p>
+                <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
+                <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+            </div><!-- /header -->
+            <div role="main" class="ui-content jqm-content">
+
+                <h1>Phonegap Kitchensink App</h1>
+                <img align="center" src="others/img/devices.png">
+
+            </div><!-- /content -->
+            <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
+                <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+                    <li data-filtertext="accelerometer gravity"><a href="#accelerometer" >Accelerometer</a></li>
+                    <li data-filtertext="camera pics"><a href="#camera" >Camera</a></li>
+                    <li data-filtertext="gallery pics"><a href="#gallery" >Gallery</a></li>
+
+                    <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+                        <h3>Capture</h3>
+                        <ul>
+                            <li data-filtertext="capture audio"><a href="#audio">Audio</a></li>
+                            <li data-filtertext="capture video"><a href="#video">Video</a></li>
+                        </ul>
+                    </li>
+                    <li data-filtertext="compass find"><a href="#compass" >Compass</a></li>
+                    <li data-filtertext="contacts find"><a href="#contacts" >Contacts</a></li>
+                    <li data-filtertext="location geolocation"><a href="#geolocation" >Geolocation</a></li>
+                    <li data-filtertext="notification beep alert vibrate"><a href="#notification" >Notification</a></li>
+
+                </ul>
+            </div><!-- /panel -->
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+                <p>Trantor Phonegap Demo <span class="jqm-version"></span></p>
+                <p>Copyright 2013 Trantor</p>
+            </div><!-- /footer -->
+            <!-- TODO: This should become an external panel so we can add input to markup (unique ID) -->
+            <div data-role="panel" class="jqm-search-panel" data-position="right" data-display="overlay" data-theme="a">
+                <div class="jqm-search">
+                    <ul class="jqm-list" data-filter-placeholder="Search demos..." data-filter-reveal="true">
+                        <li data-filtertext="accelerometer gravity"><a href="#accelerometer" >Accelerometer</a></li>
+                        <li data-filtertext="camera pics"><a href="#camera" >Camera</a></li>
+                        <li data-filtertext="gallery pics"><a href="#gallery" >Gallery</a></li>
+
+                        <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+                            <h3>Capture</h3>
+                            <ul>
+                                <li data-filtertext="capture audio"><a href="#audio">Audio</a></li>
+                                <li data-filtertext="capture video"><a href="#video">Video</a></li>
+                            </ul>
+                        </li>
+                        <li data-filtertext="contacts find"><a href="#contacts" >Contacts</a></li>
+                        <li data-filtertext="location geolocation"><a href="#geolocation" >Geolocation</a></li>
+                        <li data-filtertext="notification beep alert vibrate"><a href="#notification" >Notification</a></li>
+
+                    </ul>
+                </div>
+            </div><!-- /panel -->
+
+        </div>
+        <!-- home page end-->
+
+        <!-- accelerometer page starts-->
+        <div data-role="page" class="jqm-demos" id="accelerometer">
+
+            <div data-role="header" class="jqm-header">
+                <h2><img src="others/img/logo.png" alt="jQuery Mobile"></h2>
+                <p>Version <span class="jqm-version"></span></p>
+                <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
+            </div><!-- /header -->
+            <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
+                <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+                    <li ><a href="#home" data-icon="home">Home</a></li>
+                    <li data-filtertext="accelerometer gravity">Accelerometer</li>
+                    <li data-filtertext="camera pics"><a href="#camera" >Camera</a></li>
+                    <li data-filtertext="gallery pics"><a href="#gallery" >Gallery</a></li>
+
+                    <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+                        <h3>Capture</h3>
+                        <ul>
+                            <li data-filtertext="capture audio"><a href="#audio">Audio</a></li>
+                            <li data-filtertext="capture video"><a href="#video">Video</a></li>
+                        </ul>
+                    </li>
+                    <li data-filtertext="compass find"><a href="#compass" >Compass</a></li>
+                    <li data-filtertext="contacts find"><a href="#contacts" >Contacts</a></li>
+                    <li data-filtertext="location geolocation"><a href="#geolocation" >Geolocation</a></li>
+                    <li data-filtertext="notification beep alert vibrate"><a href="#notification" >Notification</a></li>
+
+                </ul>
+            </div><!-- /panel -->
+
+            <div role="main" class="ui-content jqm-content">
+
+                <h1>Accelerometer</h1>
+
+                <p><strong>Lets see how Accelerometer work</strong></p>
+                <button class="ui-btn ui-corner-all" id="accelerometerStart">Start</button>
+                <div id="accelerometerReading"></div>
+                <button class="ui-btn ui-corner-all" id="accelerometerStop">Stop</button>
+
+            </div><!-- /content -->
+
+
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+                <p>Trantor Phonegap Demo <span class="jqm-version"></span></p>
+                <p>Copyright 2013 Trantor</p>
+            </div><!-- /footer -->
+
+        </div>
+        <!-- accelerometer page ends -->
+
+
+        <!-- Camera page starts-->
+        <div data-role="page" class="jqm-demos" id="camera">
+
+            <div data-role="header" class="jqm-header">
+                <h2><img src="others/img/logo.png" alt="jQuery Mobile"></h2>
+                <p>Version <span class="jqm-version"></span></p>
+                <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
+            </div><!-- /header -->
+            <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
+                <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+                    <li ><a href="#home" data-icon="home">Home</a></li>
+
+                    <li data-filtertext="accelerometer gravity"><a href="#accelerometer" >Accelerometer</a></li>
+                    <li data-filtertext="camera pics">Camera</li>
+                    <li data-filtertext="gallery pics"><a href="#gallery" >Gallery</a></li>
+
+                    <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+                        <h3>Capture</h3>
+                        <ul>
+                            <li data-filtertext="capture audio"><a href="#audio">Audio</a></li>
+                            <li data-filtertext="capture video"><a href="#video">Video</a></li>
+                        </ul>
+                    </li>
+                    <li data-filtertext="compass find"><a href="#compass" >Compass</a></li>
+                    <li data-filtertext="contacts find"><a href="#contacts" >Contacts</a></li>
+                    <li data-filtertext="location geolocation"><a href="#geolocation" >Geolocation</a></li>
+                    <li data-filtertext="notification beep alert vibrate"><a href="#notification" >Notification</a></li>
+
+                </ul>
+            </div><!-- /panel -->
+            <div role="main" class="ui-content jqm-content">
+
+                <h1>Camera</h1>
+
+                <button class="ui-btn ui-corner-all" id="cameraPic">Take Pic</button>
+                <div id="cameraRoll"></div>
+
+            </div><!-- /content -->
+
+
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+                <p>Trantor Phonegap Demo <span class="jqm-version"></span></p>
+                <p>Copyright 2013 Trantor</p>
+            </div><!-- /footer -->
+
+        </div>
+        <!-- Camera page ends -->
+
+
+        <!-- gallery page starts-->
+        <div data-role="page" class="jqm-demos" id="gallery">
+
+            <div data-role="header" class="jqm-header">
+                <h2><img src="others/img/logo.png" alt="jQuery Mobile"></h2>
+                <p>Version <span class="jqm-version"></span></p>
+                <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
+            </div><!-- /header -->
+            <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
+                <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+                    <li ><a href="#home" data-icon="home">Home</a></li>
+
+                    <li data-filtertext="accelerometer gravity"><a href="#accelerometer" >Accelerometer</a></li>
+                    <li data-filtertext="camera pics"><a href="#camera" >Camera</a></li>
+                    <li data-filtertext="gallery pics">Gallery</li>
+
+                    <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+                        <h3>Capture</h3>
+                        <ul>
+                            <li data-filtertext="capture audio"><a href="#audio">Audio</a></li>
+                            <li data-filtertext="capture video"><a href="#video">Video</a></li>
+                        </ul>
+                    </li>
+                    <li data-filtertext="compass find"><a href="#compass" >Compass</a></li>
+                    <li data-filtertext="contacts find"><a href="#contacts" >Contacts</a></li>
+                    <li data-filtertext="location geolocation"><a href="#geolocation" >Geolocation</a></li>
+                    <li data-filtertext="notification beep alert vibrate"><a href="#notification" >Notification</a></li>
+
+                </ul>
+            </div><!-- /panel -->
+            <div role="main" class="ui-content jqm-content">
+
+                <h1>Gallery</h1>
+
+                <button class="ui-btn ui-corner-all" id="galleryPic">Select Pic</button>
+                <div id="galleryRoll"></div>
+
+
+            </div><!-- /content -->
+
+
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+                <p>Trantor Phonegap Demo <span class="jqm-version"></span></p>
+                <p>Copyright 2013 Trantor</p>
+            </div><!-- /footer -->
+
+        </div>
+        <!-- gallery page ends -->
+
+        <!-- audio page starts-->
+        <div data-role="page" class="jqm-demos" id="audio">
+
+            <div data-role="header" class="jqm-header">
+                <h2><img src="others/img/logo.png" alt="jQuery Mobile"></h2>
+                <p>Version <span class="jqm-version"></span></p>
+                <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
+            </div><!-- /header -->
+            <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
+                <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+                    <li ><a href="#home" data-icon="home">Home</a></li>
+
+                    <li data-filtertext="accelerometer gravity"><a href="#accelerometer" >Accelerometer</a></li>
+                    <li data-filtertext="camera pics"><a href="#camera" >Camera</a></li>
+                    <li data-filtertext="gallery pics"><a href="#gallery" >Gallery</a></li>
+
+                    <li data-role="collapsible" data-collapsed-icon="carat-d" data-collapsed="false" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+                        <h3>Capture</h3>
+                        <ul>
+                            <li data-filtertext="capture audio">Audio</li>
+                            <li data-filtertext="capture video"><a href="#video">Video</a></li>
+                        </ul>
+                    </li>
+                    <li data-filtertext="compass find"><a href="#compass" >Compass</a></li>
+                    <li data-filtertext="contacts find"><a href="#contacts" >Contacts</a></li>
+                    <li data-filtertext="location geolocation"><a href="#geolocation" >Geolocation</a></li>
+                    <li data-filtertext="notification beep alert vibrate"><a href="#notification" >Notification</a></li>
+
+                </ul>
+            </div><!-- /panel -->
+            <div role="main" class="ui-content jqm-content">
+
+                <h1>Capture Audio</h1>
+
+                <button class="ui-btn ui-corner-all" id="record">Record</button>
+                <audio controls style="display: none" id="audioPlayer" width="100%">
+
+                    Your browser does not support the audio element.
+                </audio>
+
+            </div><!-- /content -->
+
+
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+                <p>Trantor Phonegap Demo <span class="jqm-version"></span></p>
+                <p>Copyright 2013 Trantor</p>
+            </div><!-- /footer -->
+
+        </div>
+        <!-- audio page ends -->
+
+        <!-- video page starts-->
+        <div data-role="page" class="jqm-demos" id="video">
+
+            <div data-role="header" class="jqm-header">
+                <h2><img src="others/img/logo.png" alt="jQuery Mobile"></h2>
+                <p>Version <span class="jqm-version"></span></p>
+                <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
+            </div><!-- /header -->
+            <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
+                <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+                    <li ><a href="#home" data-icon="home">Home</a></li>
+
+                    <li data-filtertext="accelerometer gravity"><a href="#accelerometer" >Accelerometer</a></li>
+                    <li data-filtertext="camera pics"><a href="#camera" >Camera</a></li>
+                    <li data-filtertext="gallery pics"><a href="#gallery" >Gallery</a></li>
+
+                    <li data-role="collapsible" data-collapsed-icon="carat-d" data-collapsed="false" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+                        <h3>Capture</h3>
+                        <ul>
+                            <li data-filtertext="capture audio"><a href="#audio">Audio</a></li>
+                            <li data-filtertext="capture video">Video</li>
+                        </ul>
+                    </li>
+                    <li data-filtertext="compass find"><a href="#compass" >Compass</a></li>
+                    <li data-filtertext="contacts find"><a href="#contacts" >Contacts</a></li>
+                    <li data-filtertext="location geolocation"><a href="#geolocation" >Geolocation</a></li>
+                    <li data-filtertext="notification beep alert vibrate"><a href="#notification" >Notification</a></li>
+
+                </ul>
+            </div><!-- /panel -->
+            <div role="main" class="ui-content jqm-content">
+
+                <h1>Capture Video</h1>
+
+                <button class="ui-btn ui-corner-all" id="shoot">Shoot</button>
+                <video controls style="display: none" id="videoPlayer" width="100%" align="center">
+
+                    Your browser does not support the audio element.
+                </video>
+
+
+            </div><!-- /content -->
+
+
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+                <p>Trantor Phonegap Demo <span class="jqm-version"></span></p>
+                <p>Copyright 2013 Trantor</p>
+            </div><!-- /footer -->
+
+        </div>
+        <!-- video page ends -->
+
+
+        <!-- contacts page starts-->
+        <div data-role="page" class="jqm-demos" id="contacts">
+
+            <div data-role="header" class="jqm-header">
+                <h2><img src="others/img/logo.png" alt="jQuery Mobile"></h2>
+                <p>Version <span class="jqm-version"></span></p>
+                <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
+            </div><!-- /header -->
+            <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
+                <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+                    <li ><a href="#home" data-icon="home">Home</a></li>
+
+                    <li data-filtertext="accelerometer gravity"><a href="#accelerometer" >Accelerometer</a></li>
+                    <li data-filtertext="camera pics"><a href="#camera" >Camera</a></li>
+                    <li data-filtertext="gallery pics"><a href="#gallery" >Gallery</a></li>
+
+                    <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+                        <h3>Capture</h3>
+                        <ul>
+                            <li data-filtertext="capture audio"><a href="#audio">Audio</a></li>
+                            <li data-filtertext="capture video"><a href="#video">Video</a></li>
+                        </ul>
+                    </li>
+                    <li data-filtertext="compass find"><a href="#compass" >Compass</a></li>
+                    <li data-filtertext="contacts find">Contacts</li>
+                    <li data-filtertext="location geolocation"><a href="#geolocation" >Geolocation</a></li>
+                    <li data-filtertext="notification beep alert vibrate"><a href="#notification" >Notification</a></li>
+
+                </ul>
+            </div><!-- /panel -->
+            <div role="main" class="ui-content jqm-content">
+
+                <h1>Find a contact</h1>
+                Name : <input type="text" id="nameField"/><br/>
+                <button class="ui-btn ui-corner-all" id="search">Search</button>
+                <ul id="searchList">
+
+                </ul>
+
+
+            </div><!-- /content -->
+
+
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+                <p>Trantor Phonegap Demo <span class="jqm-version"></span></p>
+                <p>Copyright 2013 Trantor</p>
+            </div><!-- /footer -->
+
+        </div>
+        <!-- contacts page ends -->
+
+
+        <!-- Geo-location page starts-->
+        <div data-role="page" class="jqm-demos" id="geolocation">
+
+            <div data-role="header" class="jqm-header">
+                <h2><img src="others/img/logo.png" alt="jQuery Mobile"></h2>
+                <p>Version <span class="jqm-version"></span></p>
+                <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
+            </div><!-- /header -->
+            <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
+                <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+                    <li ><a href="#home" data-icon="home">Home</a></li>
+
+                    <li data-filtertext="accelerometer gravity"><a href="#accelerometer" >Accelerometer</a></li>
+                    <li data-filtertext="camera pics"><a href="#camera" >Camera</a></li>
+                    <li data-filtertext="gallery pics"><a href="#gallery" >Gallery</a></li>
+
+                    <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+                        <h3>Capture</h3>
+                        <ul>
+                            <li data-filtertext="capture audio"><a href="#audio">Audio</a></li>
+                            <li data-filtertext="capture video"><a href="#video">Video</a></li>
+                        </ul>
+                    </li>
+                    <li data-filtertext="compass find"><a href="#compass" >Compass</a></li>
+                    <li data-filtertext="contacts find"><a href="#contacts" >Contacts</a></li>
+                    <li data-filtertext="location geolocation">Geolocation</li>
+                    <li data-filtertext="notification beep alert vibrate"><a href="#notification" >Notification</a></li>
+
+                </ul>
+            </div><!-- /panel -->
+            <div role="main" class="ui-content jqm-content">
+
+                <h1>Find your Location</h1>
+                <button class="ui-btn ui-corner-all" id="getLocation">Get Location</button>
+                <img src="" style="display: none" id="map"/>
+
+            </div><!-- /content -->
+
+
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+                <p>Trantor Phonegap Demo <span class="jqm-version"></span></p>
+                <p>Copyright 2013 Trantor</p>
+            </div><!-- /footer -->
+
+        </div>
+        <!-- geolocation page ends -->
+
+
+        <!-- Notification page starts-->
+        <div data-role="page" class="jqm-demos" id="notification">
+
+            <div data-role="header" class="jqm-header">
+                <h2><img src="others/img/logo.png" alt="jQuery Mobile"></h2>
+                <p>Version <span class="jqm-version"></span></p>
+                <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
+            </div><!-- /header -->
+            <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
+                <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+                    <li ><a href="#home" data-icon="home">Home</a></li>
+
+                    <li data-filtertext="accelerometer gravity"><a href="#accelerometer" >Accelerometer</a></li>
+                    <li data-filtertext="camera pics"><a href="#camera" >Camera</a></li>
+                    <li data-filtertext="gallery pics"><a href="#gallery" >Gallery</a></li>
+
+                    <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+                        <h3>Capture</h3>
+                        <ul>
+                            <li data-filtertext="capture audio"><a href="#audio">Audio</a></li>
+                            <li data-filtertext="capture video"><a href="#video">Video</a></li>
+                        </ul>
+                    </li>
+                    <li data-filtertext="compass find"><a href="#compass" >Compass</a></li>
+                    <li data-filtertext="contacts find"><a href="#contacts" >Contacts</a></li>
+                    <li data-filtertext="location geolocation"><a href="#geolocation" >Geolocation</a></li>
+                    <li data-filtertext="notification beep alert vibrate">Notification</li>
+
+                </ul>
+            </div><!-- /panel -->
+            <div role="main" class="ui-content jqm-content">
+
+                <h1>Notifications</h1>
+                <button class="ui-btn ui-corner-all" id="normalAlert">Normal Alert</button>
+                <button class="ui-btn ui-corner-all" id="phonegapAlert">Phonegap Alert</button>
+                <button class="ui-btn ui-corner-all" id="phonegapConfirm">Phonegap Confirm</button>
+                <button class="ui-btn ui-corner-all" id="phonegapVibrate">Vibrate</button>
+                <button class="ui-btn ui-corner-all" id="phonegapBeep">Beep</button>
+
+
+            </div><!-- /content -->
+
+
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+                <p>Trantor Phonegap Demo <span class="jqm-version"></span></p>
+                <p>Copyright 2013 Trantor</p>
+            </div><!-- /footer -->
+
+        </div>
+        <!-- Notification page ends -->
+
+
+        <!-- Compass page starts-->
+        <div data-role="page" class="jqm-demos" id="compass">
+
+            <div data-role="header" class="jqm-header">
+                <h2><img src="others/img/logo.png" alt="jQuery Mobile"></h2>
+                <p>Version <span class="jqm-version"></span></p>
+                <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
+            </div><!-- /header -->
+            <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
+                <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+                    <li ><a href="#home" data-icon="home">Home</a></li>
+
+                    <li data-filtertext="accelerometer gravity"><a href="#accelerometer" >Accelerometer</a></li>
+                    <li data-filtertext="camera pics"><a href="#camera" >Camera</a></li>
+                    <li data-filtertext="gallery pics"><a href="#gallery" >Gallery</a></li>
+
+                    <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+                        <h3>Capture</h3>
+                        <ul>
+                            <li data-filtertext="capture audio"><a href="#audio">Audio</a></li>
+                            <li data-filtertext="capture video"><a href="#video">Video</a></li>
+                        </ul>
+                    </li>
+                    <li data-filtertext="compass find">Compass</li>
+                    <li data-filtertext="contacts find"><a href="#contacts" >Contacts</a></li>
+                    <li data-filtertext="location geolocation"><a href="#geolocation" >Geolocation</a></li>
+                    <li data-filtertext="notification beep alert vibrate"><a href="#notification" >Notification</a></li>
+
+                </ul>
+            </div><!-- /panel -->
+            <div role="main" class="ui-content jqm-content">
+
+                <h1>Compass reading</h1>
+                <button class="ui-btn ui-corner-all" id="compassStart">Start</button>
+                <div id="compassReading"></div>
+                <button class="ui-btn ui-corner-all" id="compassStop">Stop</button>
+
+
+            </div><!-- /content -->
+
+
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+                <p>Trantor Phonegap Demo <span class="jqm-version"></span></p>
+                <p>Copyright 2013 Trantor</p>
+            </div><!-- /footer -->
+
+        </div>
+        <!-- Compass page ends -->
+
+
+    </body>
+</html>
